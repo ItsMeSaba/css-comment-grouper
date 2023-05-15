@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Radio Canada', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* header */
+
+header {
+    /* height: 4rem; */
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+/* main */
+
+main {
+    width: 100vw;
+}
+
+.mainContainer {
+    padding: 3rem 2rem 5rem 2rem;
+    background-color: #3992bb;
+}
+
+.mainContainer .editors, .mainContainer .options {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.mainContainer .options {
+    padding: 0 0 2rem 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.mainContainer .options input {
+    padding: .6rem .6rem;
+    border-radius: .2rem;
+    border: hidden;
+    font-size: 1rem;
+    width: 6.5rem;
+    outline: transparent;
+}
+
+.mainContainer .editors #inputEditor, .mainContainer .editors #outputEditor {
+    height: 40rem;
+}
+
+.mainContainer .editors #inputEditor .monaco-editor, .mainContainer .editors #outputEditor .monaco-editor {
+    padding: 1rem 0;
+    border-radius: .3rem;
+    height: auto !important;
+}
+
+.mainContainer .options {
+    
+}
+
+.mainContainer .options .inputBlock {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+
+.mainContainer .options .inputBlock label {
+    color: white;
+}
