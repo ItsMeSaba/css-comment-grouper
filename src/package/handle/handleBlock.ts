@@ -56,7 +56,7 @@ export function handleBlock(block: Rule | AtRule, options: Options) {
 
     let groupsArray = Array.from(Groups.groups);
 
-    groupsArray = groupsArray.filter(group => group[1].length > 0);
+    groupsArray = groupsArray.filter(group => group[1].length > 0).reverse();
 
     // Append sorted properties
     for (let i = 0; i < groupsArray.length; i++) {

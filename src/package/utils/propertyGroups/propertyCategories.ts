@@ -55,6 +55,8 @@ const propertyCategories: { [key: string]: string } = {
     "max-width": "box model",
     "height": "box model",
     "max-height": "box model",
+    "min-height": "box model",
+    "min-width": "box model",
 
     // background
     "background": "background",

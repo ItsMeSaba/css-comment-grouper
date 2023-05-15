@@ -7,7 +7,6 @@ import postcsScss from "postcss-scss"
  * @param options Not used for now. Only for future updates;
  */
 export function GroupCSS(css: string, options: Options) {
-    console.log("options", options);
     try {
         const result = postcsScss.parse(css);
 
