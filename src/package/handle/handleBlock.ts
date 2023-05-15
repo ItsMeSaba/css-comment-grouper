@@ -10,10 +10,10 @@ export function handleBlock(block: Rule | AtRule, options: Options) {
     
     // Responsible for sorting properties
     const Groups = new PropertyGroups();
-
+    let hasUnrecognisablePropety = false;
+    let currentSpacing: string | undefined = "";
 
     for (let i = 0; i < listOfProperties.length; i++) {
-        console.log("listOfProperties[i]", listOfProperties[i]);
         // Handle @media @mixin
         if (listOfProperties[i].type === 'comment') {
             const comment = listOfProperties[i] as Comment; 
@@ -42,27 +42,44 @@ export function handleBlock(block: Rule | AtRule, options: Options) {
             const wasAdded = Groups.append(property)
 
             if (wasAdded) block.nodes[i] = null as any; 
+            else {
+                hasUnrecognisablePropety = true;
+                currentSpacing = block.nodes[i].raws.before;
+            }
         }
     }
     
     // Remove properties that will be readded as sorted
     block.nodes = block.nodes.filter(node => !!node)
 
+    if (hasUnrecognisablePropety) block.nodes.unshift(new Comment({ text: "Ungrouped", raws: { before: "\n" + currentSpacing } }))
+
+    let groupsArray = Array.from(Groups.groups);
+
+    groupsArray = groupsArray.filter(group => group[1].length > 0);
+
     // Append sorted properties
-    for (let [key, value] of Groups.groups) {
+    for (let i = 0; i < groupsArray.length; i++) {
+        const [key, value] = groupsArray[i];
+        // Add comment for unsorted
+
         // Adding propertes
         for (let i = 0; i < value.length; i++) {
-            console.log("value[i]", value[i]);
             block.nodes.unshift(value[i]);
         }
         
         // Adding propety group name as comment
         if (value.length > 0) {
-            let spacing = "\n" + value[0].raws.before;
+            let spacing = value[0].raws.before;
+
+            if (groupsArray.length-1 !== i) {
+                spacing = "\n" + spacing;      
+            }
 
             block.nodes.unshift(new Comment({ text: key, raws: { before: spacing } }))            
         }
-    }
+
+    }   
 
     toExec.forEach(cb => cb());
 }

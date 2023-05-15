@@ -3,7 +3,7 @@ import propertyCategories from "./propertyCategories";
 
 
 export default class PropertyGroups {
-    groups: Map<string, any[]>
+    groups: Map<string, Declaration[]>
     
     constructor() {
         this.groups = new Map([

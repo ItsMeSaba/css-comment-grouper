@@ -5,6 +5,7 @@ import { initIndentOption } from "./package/dom/initIndentOption";
 import { Options } from "./types";
 import { getInitOptions } from "./package/dom/getInitOptions";
 import { displayOptions } from "./package/dom/displayOptions";
+import "postcss-scss"
 
 const inputEditor = editor.create(document.getElementById("inputEditor")!, {
 	value: "",

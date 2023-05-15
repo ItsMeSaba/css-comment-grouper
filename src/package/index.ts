@@ -1,6 +1,7 @@
 import postcss, { AtRule, Rule } from "postcss";
 import { handleBlock } from "./handle/handleBlock";
 import { Options } from "../types";
+import postcsScss from "postcss-scss"
 
 /**
  * @param options Not used for now. Only for future updates;
@@ -8,7 +9,7 @@ import { Options } from "../types";
 export function GroupCSS(css: string, options: Options) {
     console.log("options", options);
     try {
-        const result = postcss.parse(css);
+        const result = postcsScss.parse(css);
 
         const listOfCssBlocks = result.nodes; // List of Css Blocks
 

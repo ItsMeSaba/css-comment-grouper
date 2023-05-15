@@ -1,5 +1,6 @@
 const commentGroupNames = [
     "position and layout",
+    "layout and position",
     "display and visibility",
     "clipping",
     "animation",
