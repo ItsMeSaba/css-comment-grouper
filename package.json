@@ -20,6 +20,7 @@
   "dependencies": {
     "@codemirror/lang-css": "^6.2.1",
     "codemirror": "^6.0.1",
+    "css-comment-grouper": "^1.0.2",
     "css-tree": "^2.3.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",

@@ -10,12 +10,17 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    assetModuleFilename: 'images/[name][ext]'
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
+        type: 'asset/resource'
+      },
       {
         test: /\.ts$/,
         use: 'ts-loader',
