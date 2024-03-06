@@ -7,6 +7,7 @@ const inputEditor = editor.create(document.getElementById("inputEditor")!, {
   language: "scss",
   automaticLayout: true,
   theme: "vs-dark",
+  lineHeight: 22,
 });
 
 const outputEditor = editor.create(document.getElementById("outputEditor")!, {
@@ -14,6 +15,7 @@ const outputEditor = editor.create(document.getElementById("outputEditor")!, {
   language: "scss",
   automaticLayout: true,
   theme: "vs-dark",
+  lineHeight: 22,
 });
   
 inputEditor.getModel().onDidChangeContent((e: any) => {

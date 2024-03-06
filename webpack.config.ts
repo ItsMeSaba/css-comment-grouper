@@ -10,7 +10,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'images/[name][ext]'
+    assetModuleFilename: 'assets/[name][ext]'
   },
   resolve: {
     extensions: ['.ts', '.js'],
@@ -18,7 +18,7 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|otf)$/,
         type: 'asset/resource'
       },
       {
@@ -30,10 +30,6 @@ const config: webpack.Configuration = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
-      {
-				test: /\.ttf$/,
-				use: ['file-loader']
-			}
     ],
   },
   plugins: [
