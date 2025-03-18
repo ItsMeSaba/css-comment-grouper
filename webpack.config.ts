@@ -2,6 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from "webpack"
+import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 
 const config: webpack.Configuration = { 
   mode: "development",
@@ -9,12 +10,17 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    assetModuleFilename: 'assets/[name][ext]'
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|otf)$/,
+        type: 'asset/resource'
+      },
       {
         test: /\.ts$/,
         use: 'ts-loader',
@@ -27,6 +33,7 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
+    new MonacoWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),

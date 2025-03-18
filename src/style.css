@@ -1,52 +1,54 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Radio Canada', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Radio Canada', sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* header */
 
 header {
-    /* height: 4rem; */
-    display: flex;
-    align-items: center;
-    padding: 1.5rem 3rem;
+  /* height: 4rem; */
+  display: flex;
+  align-items: center;
+  padding: 20px 3rem;
+  height: 7vh;
 }
 
 header h1 {
-    font-size: 1.6rem;
-    font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 /* main */
 
 main {
-    width: 100vw;
+  width: 100vw;
 }
 
 .mainContainer {
-    padding: 3rem 2rem 5rem 2rem;
-    background-color: #3992bb;
+  padding: 35px 32px 75px 32px;
+  height: 93vh;
+  background-color: #3992bb;
 }
 
 .mainContainer .editors, .mainContainer .options {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .mainContainer .options {
-    padding: 0 0 2rem 0;
+  padding: 0 0 2rem 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -62,34 +64,64 @@ input[type=number] {
 }
 
 .mainContainer .options input {
-    padding: .6rem .6rem;
-    border-radius: .2rem;
-    border: hidden;
-    font-size: 1rem;
-    width: 6.5rem;
-    outline: transparent;
+  padding: .6rem .6rem;
+  border-radius: .2rem;
+  border: hidden;
+  font-size: 1rem;
+  width: 6.5rem;
+  outline: transparent;
 }
 
 .mainContainer .editors #inputEditor, .mainContainer .editors #outputEditor {
-    height: 40rem;
+  height: 80vh;
+  position: relative;
 }
 
 .mainContainer .editors #inputEditor .monaco-editor, .mainContainer .editors #outputEditor .monaco-editor {
-    padding: 1rem 0;
-    border-radius: .3rem;
-    height: auto !important;
+  padding: 1rem 0;
+  border-radius: 5px;
+  height: auto !important;
 }
+
+.monaco-editor * {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 550;
+}
+  
 
 .mainContainer .options {
     
 }
 
 .mainContainer .options .inputBlock {
-    display: flex;
-    gap: .5rem;
-    flex-direction: column;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
 }
 
 .mainContainer .options .inputBlock label {
-    color: white;
+  color: white;
+}
+
+.copyButton {
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  right: 15%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(28, 28, 28);
+  padding: 5px;
+  border-radius: 5px;
+  transition: transform .2s ease-out, opacity .5s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
 }
