@@ -1,7 +1,7 @@
 import { editor } from "monaco-editor";
 import { Options } from "../types";
 import { groupCSS } from "css-comment-grouper";
-import { exampleCSS } from "./example-css";
+import { exampleCSS } from "../data/example-css";
 
 const inputEditor = editor.create(document.getElementById("inputEditor")!, {
   value: "",

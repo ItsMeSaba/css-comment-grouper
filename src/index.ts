@@ -4,8 +4,8 @@ import "postcss-scss";
 import "./assets/copyIcon.png";
 import "./assets/checkmarkIcon.png";
 
-import "./utils/copyResults";
+import "./utils/copy-results";
 
-import "./utils/initCodeEditors";
+import "./utils/init-code-editors";
 
 // import "./assets/fonts/index" // Not used for now

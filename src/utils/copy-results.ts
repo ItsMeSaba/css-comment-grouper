@@ -1,4 +1,4 @@
-import { outputEditor } from "./initCodeEditors";
+import { outputEditor } from "./init-code-editors";
 
 document.getElementById("copyResultsButton")?.addEventListener("click", (e) => {
   // Animation related stuff
