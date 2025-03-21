@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -35,19 +35,19 @@ main {
   width: 100vw;
 }
 
-.mainContainer {
+.main-container {
   padding: 35px 32px 75px 32px;
   height: 93vh;
   background-color: #3992bb;
 }
 
-.mainContainer .editors, .mainContainer .options {
+.main-container .editors, .main-container .options {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
 }
 
-.mainContainer .options {
+.main-container .options {
   padding: 0 0 2rem 0;
 }
 
@@ -61,9 +61,10 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-.mainContainer .options input {
+.main-container .options input {
   padding: .6rem .6rem;
   border-radius: .2rem;
   border: hidden;
@@ -72,12 +73,12 @@ input[type=number] {
   outline: transparent;
 }
 
-.mainContainer .editors #inputEditor, .mainContainer .editors #outputEditor {
+.main-container .editors #inputEditor, .main-container .editors #outputEditor {
   height: 80vh;
   position: relative;
 }
 
-.mainContainer .editors #inputEditor .monaco-editor, .mainContainer .editors #outputEditor .monaco-editor {
+.main-container .editors #inputEditor .monaco-editor, .main-container .editors #outputEditor .monaco-editor {
   padding: 1rem 0;
   border-radius: 5px;
   height: auto !important;
@@ -87,19 +88,14 @@ input[type=number] {
   font-family: "Work Sans", sans-serif;
   font-weight: 550;
 }
-  
 
-.mainContainer .options {
-    
-}
-
-.mainContainer .options .inputBlock {
+.main-container .options .inputBlock {
   display: flex;
   gap: .5rem;
   flex-direction: column;
 }
 
-.mainContainer .options .inputBlock label {
+.main-container .options .inputBlock label {
   color: white;
 }
 
@@ -124,4 +120,31 @@ input[type=number] {
     width: 35px;
     height: 35px;
   }
+}
+
+.text-block {
+  padding: 8rem 3rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.npm-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #cb3837;
+  border-radius: 4px;
+  border: none;
+  margin: 2rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.npm-button:hover {
+  background-color: #a72d2c;
 }
